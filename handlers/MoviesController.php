@@ -12,7 +12,7 @@ class MoviesController{
 		}
 
 		echo json_encode($movies);
-		API::status(200);
+		//API::status(200);
 	}
 
 	public function post(){
@@ -23,10 +23,10 @@ class MoviesController{
 			$req = $bdd->prepare('INSERT INTO movies(title, src, genre) VALUES(:title, :src, :genre)');
 			$req->execute(array('title' => $_POST['title'], 'src' => $_POST['src'], 'genre' => $_POST['genre']));
 
-			API::status(200);
+			//API::status(200);
         }
         else{
-        	API::status(400);
+        	//API::status(400);
         }
 	}
 }

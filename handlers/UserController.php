@@ -6,7 +6,7 @@ class UserController{
 		global $bdd;
 		$req = $bdd->prepare('SELECT * FROM users WHERE user_id = :user_id');
 		$req->execute(array('user_id' => $_POST['user_id']));
-		API::status(200);
+		//API::status(200);
 	}
 
 	public function put(){
@@ -19,6 +19,6 @@ class UserController{
 		global $bdd;
 		$req = $bdd->prepare('DELETE FROM users WHERE user_id = :user_id');
 		$req->execute(array('user_id' => $_POST['user_id']));
-		API::status(204);
+		//API::status(204);
 	}
 }
