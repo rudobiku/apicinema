@@ -3,6 +3,7 @@
 /* header('content-type: application/json; charset=utf-8'); */
 
 require("connexion.php");
+require("api.php");
 require("libs/toro.php");
 
 require("handlers/MovieController.php");
@@ -32,24 +33,24 @@ function loadClass($class){
 spl_autoload_register('loadClass'); */
 
 ToroHook::add('400', function() {
-	//API::status(400);
-	//API::error(400, 'Bad Request');
+	API::status(400);
+	API::error(400, 'Bad Request');
 });
 ToroHook::add('401', function() {
-	//API::status(401);
-	//API::error(401, 'Unauthorized');
+	API::status(401);
+	API::error(401, 'Unauthorized');
 });
 ToroHook::add('403', function() {
-	//API::status(403);
-	//API::error(403, 'Forbidden');
+	API::status(403);
+	API::error(403, 'Forbidden');
 });
 ToroHook::add('404', function() {
-	//API::status(404);
-	//API::error(404, 'Not Found');
+	API::status(404);
+	API::error(404, 'Not Found');
 });
 ToroHook::add('500', function() {
-	//API::status(500);
-	//API::error(500, 'Internal Server Error');
+	API::status(500);
+	API::error(500, 'Internal Server Error');
 });
 
 Toro::serve(array(

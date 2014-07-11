@@ -13,7 +13,7 @@ class WatchedlistController{
 		}
 
 		echo json_encode($liste);
-		//API::status(200);
+		API::status(200);
 	}
 
 	public function post(){
@@ -34,9 +34,9 @@ class WatchedlistController{
 			'movie_id' => $_POST['movie_id']));
 		}
 
-		//API::status(200);
+		API::status(200);
 		} else {
-        //API::status(400);
+        API::status(400);
         }
 
 	}

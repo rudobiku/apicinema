@@ -6,7 +6,7 @@ class MovieController{
 		global $bdd;
 		$req = $bdd->prepare('SELECT * FROM movies WHERE movie_id = :movie_id');
 		$req->execute(array('movie_id' => $id));
-		//API::status(200);
+		API::status(200);
 	}
 
 	public function put($id){
@@ -19,6 +19,6 @@ class MovieController{
 		global $bdd;
 		$req = $bdd->prepare('DELETE FROM movies WHERE movie_id = :movie_id');
 		$req->execute(array('movie_id' => $id));
-		//API::status(204);
+		API::status(204);
 	}
 }

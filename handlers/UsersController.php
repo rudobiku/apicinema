@@ -12,7 +12,7 @@ class UsersController{
 		}
 
 		echo json_encode($users);
-		//API::status(200);
+		API::status(200);
 	}
 
 	public function post(){
@@ -22,9 +22,9 @@ class UsersController{
 		$req = $bdd->prepare('INSERT INTO users(username) VALUES(:username)');
 		$req->execute(array('username' => $_POST['username']));
 		
-		//API::status(200);
+		API::status(200);
 		} else {
-        //API::status(400);
+        API::status(400);
         }
 	}
 }
