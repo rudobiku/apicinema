@@ -6,6 +6,7 @@ class MovieController{
 		global $bdd;
 		$req = $bdd->prepare('SELECT * FROM movies WHERE movie_id = :movie_id');
 		$req->execute(array('movie_id' => $_POST['movie_id']));
+		API::status(200);
 	}
 
 	public function put(){

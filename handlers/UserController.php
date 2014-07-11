@@ -6,6 +6,7 @@ class UserController{
 		global $bdd;
 		$req = $bdd->prepare('SELECT * FROM users WHERE user_id = :user_id');
 		$req->execute(array('user_id' => $_POST['user_id']));
+		API::status(200);
 	}
 
 	public function put(){
