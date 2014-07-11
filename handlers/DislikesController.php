@@ -2,10 +2,10 @@
 
 class DislikesController{
 
-	public function get(){
+	public function get($id){
 		global $bdd;
 		$req = $bdd->prepare("SELECT * FROM likes WHERE user_id = :user_id AND dislike_movie = 'true'");
-		$req->execute(array('user_id' => $_POST['user_id']));
+		$req->execute(array('user_id' => $id));
 
 		$dislikes = array();
 		while($dislike = $req->fetch()){
