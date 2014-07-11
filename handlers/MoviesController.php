@@ -16,8 +16,8 @@ class MoviesController{
 	}
 
 	public function post(){
-		 if(isset($_POST['title']) && isset($_POST['genre']) && 
-            strlen(trim($_POST['title'])) > 0 && $_POST['genre'] > 0){
+		 if(isset($_POST['title']) && isset($_POST['genre']) && $_POST['src'] &&
+            strlen(trim($_POST['title'])) > 0 && strlen(trim($_POST['genre'])) > 0){
 
 			global $bdd;
 			$req = $bdd->prepare('INSERT INTO movies(title, src, genre) VALUES(:title, :src, :genre)');
